@@ -3,4 +3,5 @@
 /node_modules
 /dist
 
-/setup-local/node_modules
+**/node_modules
+**/dist
