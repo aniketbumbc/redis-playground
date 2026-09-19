@@ -4,7 +4,7 @@ const app = express();
 app.use(express.json());
 
 const redis = new Redis('redis://localhost:6380');
-
+// Test comment
 const SITE_BANNER_KEY = 'app:site_banner';
 
 app.post('/site-banner', async (req, res) => {
