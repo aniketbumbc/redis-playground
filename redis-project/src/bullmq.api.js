@@ -3,6 +3,7 @@ import { emailQueue } from './queue.js';
 
 const app = express();
 app.use(express.json());
+//testing pr for inggest demo
 
 app.post('/welcome-email', async (req, res) => {
   const { to, subject, body } = req.body;
