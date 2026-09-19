@@ -9,6 +9,9 @@ const redisClient = new Redis('redis://localhost:6380');
 
 await mongoose.connect('mongodb://localhost:27017/local_practice_redis');
 
+/**
+ *  Add a route to check if Redis is working
+ */
 app.get('/redis', async (req, res) => {
   const replay = await redisClient.ping();
   res.json({
@@ -17,6 +20,9 @@ app.get('/redis', async (req, res) => {
   });
 });
 
+/**
+ *  Add a route to check if MongoDB is working
+ */
 app.get('/mongo', async (req, res) => {
   const replay = await mongoose.connection.db.admin().ping();
   res.json({
