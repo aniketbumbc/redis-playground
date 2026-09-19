@@ -19,10 +19,16 @@ const emailWorker = new Worker(
   { connection },
 );
 
+/**
+ *  Add a listener to the worker to log the completed jobs
+ */
 emailWorker.on('completed', (job) => {
   console.log(`Email sent successfully to ${job.data.to}`);
 });
 
+/**
+ *  Add a listener to the worker to log the failed jobs
+ */
 emailWorker.on('failed', (job, error) => {
   console.log(`Email sending failed to ${job.data.to} with error ${error}`);
 });
